@@ -8,9 +8,9 @@ namespace Garage_App
 {
     internal class Airplane : Vehicle
     {
-        int NumberOfEngines { get; set; }  
-        int NumberOfSit { get; set; }   
-        double Length { get; set; }
+        public int NumberOfEngines { get; set; }  
+        public int NumberOfSit { get; set; }   
+        public double Length { get; set; }
 
         public override string ToString()
         {

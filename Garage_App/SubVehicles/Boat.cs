@@ -8,7 +8,7 @@ namespace Garage_App
 {
     internal class Boat : Vehicle
     {
-        double Length { get; set; }
+        public double Length { get; set; }
 
         public override string ToString()
         {

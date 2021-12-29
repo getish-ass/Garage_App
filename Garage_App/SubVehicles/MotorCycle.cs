@@ -8,7 +8,7 @@ namespace Garage_App
 {
     internal class MotorCycle : Vehicle
     {
-        double CylVol { get; set; }
+        public double CylVol { get; set; }
 
         public override string ToString()
         {
