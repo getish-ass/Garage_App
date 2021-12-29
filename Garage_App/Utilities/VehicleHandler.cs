@@ -41,7 +41,7 @@ namespace Garage_App.Utilities
                     case 4:
                         AddVehicle("Boat"); break;
                     case 5:
-                        AddVehicle("Boat"); break;
+                        AddVehicle("Airplane"); break;
                     case 6:
                         DesplayGarage(); break;
                     case 0:
@@ -107,7 +107,7 @@ namespace Garage_App.Utilities
                 int x = 0;
                 while (!(x == 1))
                 {
-                  if(x == 0) { break; }
+                  if(x == 1) { break; }
                   else
                   { 
                     Console.WriteLine("Enter registration number:");
@@ -138,7 +138,7 @@ namespace Garage_App.Utilities
                 int x = 0;
                 while (!(x == 1))
                 {
-                    if(x == 0) { break; }
+                    if(x == 1) { break; }
                     else
                     {
                         Console.WriteLine("Enter registration number:");
@@ -157,13 +157,38 @@ namespace Garage_App.Utilities
                     x = int.Parse(Console.ReadLine());
                 }
             }
-            else if (v == "Airplane")
+            else if (v == "Boat")
+            {
+                boat = new Garage<Boat>(10);
+                int x = 0;
+                while (!(x == 1))
+                {
+                    if (x == 1) { break; }
+                    else
+                    {
+                        Console.WriteLine("Enter registration number:");
+                        string regnum = Console.ReadLine();
+                        Console.WriteLine("Enter type of vehicle (Car, MotorCycle, Bus, Airplane, Boat):");
+                        string vehtyp = Console.ReadLine();
+                        Console.WriteLine("Enter vehicle color:");
+                        string vehcol = Console.ReadLine();
+                        Console.WriteLine("Enter number of wheel:");
+                        int numwheel = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Enter the length of the boat:");
+                        double len = double.Parse(Console.ReadLine());
+                        boat.Add(new Boat { RegisterNumber = regnum, VehicleType = vehtyp, VehicleColor = vehcol, NumberOfWheel = numwheel, Length = len });
+                    }
+                    Console.WriteLine("enter 1 to exit other wise continue to enter the necessary details of your vehicle");
+                    x = int.Parse(Console.ReadLine());
+                }
+            }
+            else if(v == "Airplane")
             {
                 airplane = new Garage<Airplane>(10);
                 int x = 0;
                 while (!(x == 1))
                 {
-                    if(x==0) { break; }
+                    if(x==1) { break; }
                     else
                     {
                         Console.WriteLine("Enter registration number:");
@@ -186,31 +211,7 @@ namespace Garage_App.Utilities
                     x = int.Parse(Console.ReadLine());
                 }
             }
-            else
-            {
-                boat = new Garage<Boat>(10);
-                int x = 0;
-                while (!(x == 1))
-                {
-                    if(x == 1) { break; }
-                    else
-                    {
-                        Console.WriteLine("Enter registration number:");
-                        string regnum = Console.ReadLine();
-                        Console.WriteLine("Enter type of vehicle (Car, MotorCycle, Bus, Airplane, Boat):");
-                        string vehtyp = Console.ReadLine();
-                        Console.WriteLine("Enter vehicle color:");
-                        string vehcol = Console.ReadLine();
-                        Console.WriteLine("Enter number of wheel:");
-                        int numwheel = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Enter the length of the boat:");
-                        double len = double.Parse(Console.ReadLine());
-                        boat.Add(new Boat { RegisterNumber = regnum, VehicleType = vehtyp, VehicleColor = vehcol, NumberOfWheel = numwheel, Length = len });
-                    }               
-                    Console.WriteLine("enter 1 to exit other wise continue to enter the necessary details of your vehicle");
-                    x = int.Parse(Console.ReadLine());
-                }
-            }
+            
         }
     }
 }
