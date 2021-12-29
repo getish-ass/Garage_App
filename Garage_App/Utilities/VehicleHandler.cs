@@ -16,7 +16,7 @@ namespace Garage_App.Utilities
 
         public void UserMenu()
         {
-            int i;
+            int i = 0;
 
             do
             {
@@ -26,6 +26,7 @@ namespace Garage_App.Utilities
                                   "3. Motor Cycle\n" +
                                   "4. Boat\n" +
                                   "5. Airplane\n" +
+                                  "6. Desplay Garage\n" +
                                   "0. Exit\n");
 
                 i = int.Parse(Console.ReadLine());
@@ -41,6 +42,8 @@ namespace Garage_App.Utilities
                         AddVehicle("Boat"); break;
                     case 5:
                         AddVehicle("Boat"); break;
+                    case 6:
+                        DesplayGarage(); break;
                     case 0:
                         Environment.Exit(0);  break;
                     default:
