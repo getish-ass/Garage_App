@@ -5,9 +5,9 @@ using Garage_App.Utilities;
 
 VehicleHandler vehicleHandler = new VehicleHandler();
 
-vehicleHandler.UserMenu();
 
-vehicleHandler.DesplayGarage();
+
+vehicleHandler.MainMenu();
 
 //Garage<Car> car = new Garage<Car>(10);
 //car.Add(new Car() 

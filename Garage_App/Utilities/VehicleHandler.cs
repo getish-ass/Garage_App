@@ -14,9 +14,27 @@ namespace Garage_App.Utilities
         Garage<Airplane> airplane;
         Garage<Boat> boat;
 
+        public void MainMenu()
+        {
+            Console.WriteLine("Enter 1 if you want to park or 2 to see a the garage or 0 to exit");
+            int ch = int.Parse(Console.ReadLine());
+            if (ch == 1)
+            {
+              UserMenu();
+            }
+            else if (ch == 2)
+            {
+              DesplayGarage();
+            }
+            else if(ch == 0)
+            {
+                Environment.Exit(0);
+            }
+
+        }
         public void UserMenu()
         {
-            int i = 0;
+            
 
             do
             {
@@ -26,10 +44,11 @@ namespace Garage_App.Utilities
                                   "3. Motor Cycle\n" +
                                   "4. Boat\n" +
                                   "5. Airplane\n" +
-                                  "6. Desplay Garage\n" +
+                                  "6. Back to MainMenu\n" +
                                   "0. Exit\n");
-
-                i = int.Parse(Console.ReadLine());
+                
+                int i = int.Parse(Console.ReadLine());
+                
                 switch (i)
                 {
                     case 1:
@@ -43,9 +62,7 @@ namespace Garage_App.Utilities
                     case 5:
                         AddVehicle("Airplane"); break;
                     case 6:
-                        DesplayGarage(); break;
-                    case 0:
-                        Environment.Exit(0);  break;
+                        MainMenu(); break;
                     default:
                         Console.WriteLine("Please enter some valid input ( 1, 2,...5)"); break;
                 }
@@ -55,16 +72,57 @@ namespace Garage_App.Utilities
 
         public void DesplayGarage()
         {
-            Console.WriteLine("Parked cars in the Garage:\n");
-            car.DesplayVehicle();
-            Console.WriteLine("Parked Bus in the Garage:\n");
-            bus.DesplayVehicle();
-            Console.WriteLine("Parked MotorCycle in the Garage:\n");
-            motorcycle.DesplayVehicle();
-            Console.WriteLine("Parked Airplan in the Garage:\n");
-            airplane.DesplayVehicle();
-            Console.WriteLine("Parked Boat in the Garage:\n");
-            boat.DesplayVehicle();
+           
+
+            do
+            {
+                Console.WriteLine("Enter the corresponding number to chose which type of vehicle Garage you want to see");
+                Console.WriteLine("1. Car\n" +
+                                  "2. Bus\n" +
+                                  "3. Motor Cycle\n" +
+                                  "4. Boat\n" +
+                                  "5. Airplane\n" +
+                                  "6. Back to MainMenu\n"
+                                  );
+
+                int i = int.Parse(Console.ReadLine());
+                switch (i)
+                {
+                    case 1:
+                        Console.WriteLine("Parked cars in the Garage:\n");
+                        car.DesplayVehicle();
+                        break;
+                    case 2:
+                        Console.WriteLine("Parked Bus in the Garage:\n");
+                        bus.DesplayVehicle();
+                        break;
+                    case 3:
+                        Console.WriteLine("Parked MotorCycle in the Garage:\n");
+                        motorcycle.DesplayVehicle();
+                        break;
+                    case 4:
+                        Console.WriteLine("Parked Airplan in the Garage:\n");
+                        boat.DesplayVehicle();
+                            
+                        break;
+                    case 5:
+                        Console.WriteLine("Parked Boat in the Garage:\n");
+                        airplane.DesplayVehicle();
+                        break;                  
+                    case 6:
+                        MainMenu(); break;
+                    default:
+                        Console.WriteLine("Please enter some valid input ( 1, 2,...5)"); break;
+                }
+
+            } while (true);
+
+            
+            
+            
+            
+            
+            
         }
 
         private void AddVehicle(string v)
@@ -112,7 +170,7 @@ namespace Garage_App.Utilities
                   { 
                     Console.WriteLine("Enter registration number:");
                     string regnum = Console.ReadLine();
-                    Console.WriteLine("Enter type of vehicle (Car, MotorCycle, Bus, Airplane, Boat):");
+                    Console.WriteLine("Enter type of vehicle (Car, Bus, MotorCycle, Boat, Airplane):");
                     string vehtyp = Console.ReadLine();
                     Console.WriteLine("Enter vehicle color:");
                     string vehcol = Console.ReadLine();
@@ -203,7 +261,7 @@ namespace Garage_App.Utilities
                         int numengine = int.Parse(Console.ReadLine());
                         Console.WriteLine("Enter number of sit:");
                         int numofsit = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Enter bus length");
+                        Console.WriteLine("Enter Airplane length");
                         double len = double.Parse(Console.ReadLine());
                         airplane.Add(new Airplane { RegisterNumber = regnum, VehicleType = vehtyp, VehicleColor = vehcol, NumberOfWheel = numwheel, NumberOfEngines = numengine, NumberOfSit = numofsit, Length = len });
                     }                    
