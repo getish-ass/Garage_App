@@ -3,11 +3,11 @@ using Garage_App;
 using Garage_App.Utilities;
 
 
-VehicleHandler vehicleHandler = new VehicleHandler();
+//VehicleHandler vehicleHandler = new VehicleHandler();
 
 
 
-vehicleHandler.MainMenu();
+//vehicleHandler.MainMenu();
 
 //Garage<Car> car = new Garage<Car>(10);
 //car.Add(new Car() 
@@ -58,3 +58,11 @@ vehicleHandler.MainMenu();
 
 //car.DesplayVehicle();
 //motorCycle.DesplayVehicle();
+
+
+
+
+
+var gh = new GarageHandler(10);
+gh.SeedData();
+gh.PrintAllVehicles();

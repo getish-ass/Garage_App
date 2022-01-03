@@ -10,41 +10,40 @@ namespace Garage_App
     internal class Garage<T> : IEnumerable<T> where T : Vehicle
 
     {
-        public T[] ts;
-        int count = -1;
+        private T[] vehicles;
 
         public Garage(int i)
         {
-            ts = new T[i];
+            vehicles = new T[i];
         }
-        public void Add(T t) { ts[++count] = t; }
 
-        public void DesplayVehicle()
+        public bool Park(T vehicle)
         {
-
-            foreach (T t in ts)
-            { 
-              //handles unassigned null array members 
-                if (t != null)
+            for (int i = 0; i < vehicles.Length; i++)
+            {
+                if (vehicles[i] == null)
                 {
-                    Console.WriteLine(t.ToString());
-                }
-                else
-                {
-                    break;
+                    vehicles[i] = vehicle;
+                    return true;
                 }
             }
+            return false;
         }
 
         public IEnumerator<T> GetEnumerator()
         {
-            //return ts.GetEnumerator();
-            throw new NotImplementedException();
+            for (int i = 0; i < vehicles.Length; i++)
+            {
+                if (vehicles[i] != null)
+                {
+                    yield return vehicles[i];
+                }
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
     }
 }

@@ -8,15 +8,17 @@ namespace Garage_App
 {
     internal class Bus : Vehicle
     {
+        public Bus(string regnr, string color, int nrofWheels, int numofSeats) : base(regnr, color, nrofWheels)
+        {
+            NumOfSit = numofSeats;
+        }
 
-        public double CylVol { get; set; }
-        public string FuelType { get; set; }
         public int NumOfSit { get; set; }
-        public double Length { get; set; }
+
 
         public override string ToString()
         {
-            return $"{base.ToString()} Cylinder Vol.: {CylVol}, Fuel: {FuelType}, Number Of Sit: {NumOfSit}, Length: {Length}";
+            return $"{base.ToString()}, Number Of Sit: {NumOfSit}.";
         }
     }
 }

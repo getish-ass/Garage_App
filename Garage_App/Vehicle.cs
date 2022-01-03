@@ -1,14 +1,21 @@
-﻿// See https://aka.ms/new-console-template for more information
-public class Vehicle
+﻿
+public abstract class Vehicle
 {
     public string? RegisterNumber { get; set; }
-    public string? VehicleType { get; set; }
-    public string? VehicleColor { get; set; }
-    public int NumberOfWheel { get; set; }
+    //public string? VehicleType { get; set; }
+    public string? Color { get; set; }
+    public int NumberOfWheels { get; set; }
+
+    public Vehicle(string regnr, string color, int nrofWheels)
+    {
+        RegisterNumber = regnr;
+        Color = color;
+        NumberOfWheels = nrofWheels;
+    }
 
     public override string ToString()
     {
-        return $"Register Num.: {RegisterNumber} Vehicle Typ.:{VehicleType} Vehicle Col.:{VehicleColor} Number Of Wheels: {NumberOfWheel}";
+        return $"Register Num.: {RegisterNumber}, Vehicle Col.:{Color} Number Of Wheels: {NumberOfWheels}";
     }
 
 }
