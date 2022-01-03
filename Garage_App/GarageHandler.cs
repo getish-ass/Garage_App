@@ -24,6 +24,24 @@ namespace Garage_App
             garage.Park(new Bus("BUS111", "Red", 8, 40));
         }
 
+        public void Unpark(string regnr)
+        {
+            garage.Unpark(regnr);
+            Console.WriteLine($"Successfully unparked vehicle with licence number: {regnr}.");
+        }
+
+        public void FindByRegNr(string regnr)
+        {
+            foreach (var vehicle in garage)
+            {
+                if (vehicle.RegisterNumber == regnr)
+                {
+                    Console.WriteLine($"Found vehicle: {vehicle.ToString()}");
+                }
+            }
+        }
+
+
         public void PrintAllVehicles()
         {
             foreach (var vehicle in garage)

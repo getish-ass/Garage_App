@@ -65,4 +65,7 @@ using Garage_App.Utilities;
 
 var gh = new GarageHandler(10);
 gh.SeedData();
+gh.Unpark("CAR111");
 gh.PrintAllVehicles();
+Console.WriteLine();
+gh.FindByRegNr("MOT111");

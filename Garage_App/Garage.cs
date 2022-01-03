@@ -30,6 +30,32 @@ namespace Garage_App
             return false;
         }
 
+        public bool Unpark(string regnr)
+        {
+            for (int i = 0; i < vehicles.Length; i++)
+            {
+                if (vehicles[i] != null && vehicles[i].RegisterNumber == regnr)
+                {
+                    vehicles[i] = null;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //public T Find(string regnr)
+        //{
+        //    for (int i = 0; i < vehicles.Length; i++)
+        //    {
+        //        if (vehicles[i] != null && vehicles[i].RegisterNumber == regnr)
+        //        {
+        //            return vehicles[i];
+        //        }
+        //    }
+
+        //    return null;
+        //}
+
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < vehicles.Length; i++)
